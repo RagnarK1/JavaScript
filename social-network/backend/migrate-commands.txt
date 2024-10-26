@@ -1,0 +1,3 @@
+migrate create -ext sql -dir database/migrations -seq <name>
+
+migrate -database sqlite://database/database.db -path database/migrations up

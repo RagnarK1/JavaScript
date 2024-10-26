@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forum</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Login Form (Initially displayed) -->
+        <div id="loginContainer">
+            <h1>Login</h1>
+            <form id="loginForm">
+                <label for="loginEmail">Email:</label>
+                <input type="email" id="loginEmail" name="loginEmail" required>
+                <br>
+                <label for="loginPassword">Password:</label>
+                <input type="password" id="loginPassword" name="loginPassword" required>
+                <br>
+                <button id="loginButton">Login</button>
+            </form>
+            <div id="errorMessage" style="color: red;"></div>
+            <p>Don't have an account? <a href="#" id="registerLink">Register</a></p>
+        </div>
+        <!-- Registration ˇForm (Initially hidden) -->
+        <div id="registerContainer" style="display: none;">
+            <h1>Register</h1>
+        <form action="/api/register" method="post">
+            <input type="text" id="registerNickname" name="nickname" placeholder="Nickname" required>
+            <input type="text" id="registerAge" name="age" placeholder="Age" required pattern="[0-9]+" title="Please enter a valid age (numeric characters only)">
+            <input type="text" id="registerGender" name="gender" placeholder="Gender" required>
+            <input type="text" id="registerFirstName" name="first_name" placeholder="First Name" required>
+            <input type="text" id="registerLastName" name="last_name" placeholder="Last Name" required>
+            <input type="email" id="registerEmail" name="email" placeholder="Email" required>
+            <input type="password" id="registerPassword" name="password" placeholder="Password" required>
+            <button id="registerButton">Register</button>
+        </form>
+            <p>Already have an account? <a href="#" id="loginLink">Login</a></p>
+        </div>
+    </div>
+</div>
+    <div class="forumContainer">
+        <!--Shows all users registered in database (Initially hidden)-->
+        <div class="leftSideContainer">
+            <div id="userInfo" style="display: none;">
+                <h3>Users</h3>
+                <div id="chatUsers"></div>
+            </div>
+            <!--Notification-->
+            <div id="messageNotification" class="notification-hidden"> 
+                <p>New message received!</p>
+            </div>       
+            <div id="chatContainer" style="display: none;">
+                <div class="chat-header">
+                    <h3>Chat with <span id="chatHeaderNickname"></span></h3>
+                    <span class="closeChat">X</span>
+                </div>
+                <div id="chatMessages"></div>
+                <div id="chatInputContainer">
+                    <input type="text" id="chatInput" placeholder="Type your message...">
+                    <button id="sendChatButton">Send</button>
+                </div>
+            </div>
+        </div>
+        <!-- Forum (Initially hidden) -->
+        <div id="forumContent" style="display: none;">
+            <h1>Forum</h1>
+            <div class="user-info" id="loggedInUserDisplay">
+                <p>Logged in as <span id="loggedInNickname"></span></p>
+            </div>
+            <!--Shows all post-->
+            <div id="postCreation">
+                <h2>Create Post</h2>
+                <label for="postCategory">Select Category:</label>
+                <select id="postCategory">
+                    <option value="Lessons">Lessons</option>
+                    <option value="Journey">Journey</option>
+                    <option value="Food">Food</option>
+                    <option value="Beauty">Beauty</option>
+                </select>
+                <br>
+                <br>
+                <input type="text" id="postTitle" placeholder="Post Title">
+                <textarea id="postContent" placeholder="Post Content"></textarea>
+                <button id="createPostButton">Create Post</button>
+            </div>
+
+            <div id="postsFeed">
+                <h2>Posts Feed</h2>
+                <div id="postsList"></div>
+            </div>
+        </div>
+        <!---Post view with comments...-->
+        <div id="postView" style="display: none;">
+            <button id="backToPostsFeedBtn">Back to the posts</button>
+            <h1 id="title"></h1>
+            <p>Post made by: <span id="nickname"></span></p>
+            <p id="content"></p>
+            <p>Category: <span id="category"></span></p>
+            <p id="createdAt"></p>
+            
+            <div id="commentsContainer">
+                <h2>Comments</h2>
+                <div id="commentsList"></div>
+            </div>
+
+            <div id="commentCreation">
+                <h2>Create Comment</h2>
+                <textarea id="commentContent" placeholder="Write a comment here!"></textarea>
+                <button id="createCommentButton">Create Comment</button>
+            </div>
+        </div>
+        <button id="logoutButton">Logout</button>
+    </div>
+    
+    <script src="main.js"></script>
+</body>
+</html>

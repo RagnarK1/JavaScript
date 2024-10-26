@@ -1,0 +1,1 @@
+ALTER TABLE conversation_relationships ADD COLUMN group_id integer

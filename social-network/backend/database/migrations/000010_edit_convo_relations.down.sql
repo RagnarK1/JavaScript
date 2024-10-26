@@ -1,0 +1,1 @@
+ALTER TABLE conversation_relationships DROP COLUMN group_id;

@@ -1,0 +1,38 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="style.css">
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;400&family=Raleway:ital,wght@0,100;0,400;1,200&display=swap" rel="stylesheet">
+        <script src="https://kit.fontawesome.com/7384292880.js" crossorigin="anonymous"></script>
+        <script src="app.js"></script>
+        <title>Tetris</title>
+    </head>
+    <body>
+        <div class="container">
+            <div class="heading">
+                <h1>T</h1><h1>E</h1><h1>T</h1><h1>R</h1><h1>I</h1><h1>S</h1>
+                <div class="controls">
+                    <h3>Controls:</h3>
+                    <p><i class="fa-solid fa-arrow-right"></i> move right</p>
+                    <p><i class="fa-solid fa-arrow-left"></i> move left</p>
+                    <p><i class="fa-solid fa-arrow-down"></i> move down</p>
+                    <p><i class="fa-solid fa-arrow-up"></i> rotate</p>
+                </div>
+            </div>
+            <div class="grid"></div>
+            <div id="right-side-table">
+                <div class="mini-grid"></div>
+                <div class="scoreTable">
+                    <h2>Score: <span id="score">0</span></h2>
+                    <h2>Lives: <span id="lives">3</span></h2>
+                    <h2  id="timer">Time: <span id="min">00</span>:<span id="sec">00</span></h2>
+                </div>
+                <div id="buttons">
+                    <button id="start-pauseBtn" class="button">Start/pause</button>
+                    <button id="restartBtn" class="button">Restart</button>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

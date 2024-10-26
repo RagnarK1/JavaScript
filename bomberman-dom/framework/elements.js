@@ -1,0 +1,15 @@
+import { C } from "./component.js";
+
+export const div = C.bind(null, "div")
+export const p = C.bind(null, "p")
+export const button = C.bind(null, "button")
+export const a = C.bind(null, "a")
+export const section = C.bind(null, "section")
+export const header = C.bind(null, "header")
+export const h1 = C.bind(null, "h1")
+export const input = C.bind(null, "input")
+export const label = C.bind(null, "label")
+export const ul = C.bind(null, "ul")
+export const li = C.bind(null, "li")
+export const footer = C.bind(null, "footer")
+export const span = C.bind(null, "span")

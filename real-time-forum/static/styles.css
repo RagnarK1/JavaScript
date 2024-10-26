@@ -1,0 +1,298 @@
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(to bottom, #1d3a4d, #123547);
+    background-size: cover;
+    background-repeat: no-repeat;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0; 
+}
+
+#loginContainer,
+#registerContainer {
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    width: 250px;
+}
+
+/* Styling for input fields and buttons */
+input[type="text"],
+input[type="email"],
+input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+input:invalid {
+    border-color: red;
+}
+/* Style error messages */
+input:invalid + span {
+    color: red;
+}
+
+button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #d41f8f;
+}
+
+#backToPostsFeedBtn  {
+    position: absolute;
+    top: 50px; 
+    right: 10px;
+}
+
+#logoutButton {
+    position: absolute;
+    right: 10px; 
+    top: 10px;
+}
+/* forumContent */
+
+.forumContainer {
+    background: linear-gradient(to bottom, #1d3a4d, #123547);
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+}
+
+.leftSideContainer {
+    display: flex;
+    flex-direction: column;
+    margin-right: 20px;
+    justify-content: space-between;
+    height: 100vh;
+}
+
+#forumContent,
+#postView {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    width: 800px;
+    padding: 30px;
+    text-align: center;
+}
+
+#loggedInUserDisplay {
+    margin-bottom: 20px;
+    font-weight: bold;
+    margin-right: 10px;
+}
+
+#userInfo {
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 10px;
+    color: black;
+    border-radius: 8px;
+    width: 200px; 
+    margin: 50px;
+    margin-left: 0px;
+}
+#userInfo h2 {
+    margin-bottom: 10px;
+}
+#userInfo #logoutButton {
+    background-color: #d41f8f;
+}
+
+/* Posting */
+#postTitle {
+    width: 50%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+#postContent,
+#commentContent {
+    width: 85%;
+    height: 100px; 
+    padding: 20px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    resize: vertical; 
+}
+
+.nicknameElement {
+    margin: 5px 35px;
+    display: flex;
+}
+
+.contentElement {
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin: 0px 35px;
+    padding: 10px;
+}
+
+.post {
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.post:hover {
+    cursor: pointer;
+    background-color: #f0f0f0;
+    transform: scale(1.02);
+}
+
+.online::before {
+    content: '● ';
+    color: green;
+}
+.offline::before {
+    content: '● ';
+    color: red;
+}
+
+@media (max-width: 900px) {
+    #forumContent {
+        width: 90%; 
+    }
+}
+
+/* Chat */
+#chatContainer {
+    background-color: white;
+    padding: 10px;
+    color: black;
+    position: static;
+    margin-top: 20px;
+    border-radius: 8px;
+    width: 250px;
+    bottom: 20px;
+    box-shadow: 0px 0px 30px rgba(85, 4, 114, 0.3); /* Add box-shadow here */
+}
+
+#chatMessages {
+    height: 250px;
+    overflow-y: scroll;
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.message {
+    font-size: 14px;
+    margin: 5px;
+    padding: 10px;
+    border-radius: 5px;
+    max-width: 60%;
+}
+
+.sent {
+    align-self: flex-end;
+    background-color: #007bff;
+    color: white;
+}
+
+.received {
+    align-self: flex-start;
+    background-color: #f1f1f1;
+}
+
+.chat-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.closeChat {
+    cursor: pointer;
+    padding: 5px 8px;
+    background-color: #007bff;
+    color: white;
+    border-radius: 20%;
+    margin-left: 10px;
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 1;
+}
+
+.closeChat:hover {
+    background-color: #d41f8f;
+}
+
+#chatInputContainer {
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+}
+
+#chatInput {
+    flex-grow: 1;
+    padding: 5px;
+}
+
+#sendChatButton {
+    padding: 5px 10px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+}
+
+
+#chatUsers p:hover {
+    color: #007bff;
+    cursor: pointer;
+}
+  
+#messageNotification {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #d41f8f;
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.notification-hidden {
+    display: none;
+}
+
+.notification-shown {
+    display: block;
+}
+
+@keyframes flashAnimation {
+    0%   { color: #d41f8f; }
+    50%  { color: black; }
+    100% { color: #d41f8f; }
+}
+
+.flashEffect {
+    animation: flashAnimation 1s infinite; /* Adjust '1s' to control the speed */
+}

@@ -1,0 +1,1 @@
+ALTER TABLE comments DROP COLUMN creator_id

@@ -1,0 +1,37 @@
+version: '3.8'
+services:
+  #caddy-server:
+    #image: caddy:latest
+    #ports:
+    #  - "80:80"
+    #  - "443:443"
+    #volumes:
+    #  - ./caddy:/etc/caddy
+    #depends_on:
+    #  - backend
+    #  - frontend
+  nginx:
+    build:
+      context: ./nginx
+      dockerfile: Dockerfile
+    ports:
+      - "80:80"
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    volumes:
+      - ./backend:/app
+    ports:
+      - "8080:8080"
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    env_file:
+      - ./frontend/.env.local
+    ports:
+     - "3000:3000"
+networks:
+  default:
+    name: main-network
